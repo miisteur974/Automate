@@ -45,7 +45,7 @@ void node::linkTo(node* r_node, string condition)
 		this->next_nodes.insert(pair<string, node*>(sb, r_node));
 		for (auto c : sb)
 		{
-			if (condition.find(c) != string::npos)
+			if (this->alphabet_exception.find(c) != string::npos)
 				this->alphabet_exception = remove(this->alphabet_exception, c);
 		}
 	}
@@ -55,7 +55,10 @@ node* node::input(string input)
 {
 
 	if (this->alphabet_exception.find(input) != string::npos || input == " " || input.empty())
-		return this->next_nodes.at("!");
+		if (this->next_nodes.size() > 0)
+			return this->next_nodes.at("!");
+		else
+			return this;
 	else
 		return this->next_nodes.at(input);
 }

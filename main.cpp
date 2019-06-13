@@ -2,9 +2,11 @@
 
 int main(int argc, char** argv)
 {
-	Automate n1 = Automate("automate.conf", "abcdefghijklmnopqrstuvwxyz ");
 
-	status result = n1.send("a", "abcdef");
+	Automate n1 = Automate("automate.conf", "abcdefghijklmnopqrstuvwxyz ");
+	status result = n1.send("noeud1", "ephorie");
+
+
 
 	switch(result)
 	{

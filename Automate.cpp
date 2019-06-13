@@ -59,9 +59,6 @@ Automate::Automate(string configuration_file, string alphabet)
 				}
 			}
 		}
-		else {
-			cout << " Can't open " << configuration_file << " ! " << endl;
-		}
 		file.close();
 	}
 }
